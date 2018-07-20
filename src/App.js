@@ -14,6 +14,7 @@ class App extends Component {
         <p className="App-intro">
           Find the closest brewery. Enter your zip.
         </p>
+        <Search />
       </div>
     );
   }

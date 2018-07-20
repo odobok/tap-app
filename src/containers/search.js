@@ -53,7 +53,7 @@ class Search extends Component {
         </div>
 
       <hr />
-        <Nearby breweries results={this.state.results}/>
+      {/*  <Breweries results={this.state.results}/> */}
               </div>
     )
   }
