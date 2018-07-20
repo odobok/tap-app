@@ -2,6 +2,7 @@
 //secret message II: electric boogaloo
 import React, { Component } from 'react';
 import './App.css';
+import Search from './containers/search'
 
 class App extends Component {
   render() {
