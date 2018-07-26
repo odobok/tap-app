@@ -2,13 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 //import Recipes from './Recipes'
 
-let config = {
-  headers: {
-     'content-type': 'application/json',
-     'Access-Control-Allow-Origin': 'http://192.168.0.7:3000/',
-  }
-}
-
 class Search extends Component {
     constructor(props) {
       super(props)
