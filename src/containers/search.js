@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-//import Recipes from './Recipes'
+import Breweries from '../Breweries'
 
 class Search extends Component {
     constructor(props) {
@@ -33,7 +33,7 @@ class Search extends Component {
     }
 
   render () {
-    console.log(this.state.results)
+    //console.log(this.state.results)
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -56,14 +56,8 @@ class Search extends Component {
         </div>
 
       <hr />
-      {/*  <Breweries results={this.state.results}/> */}
-      <ul>
-        {this.state.results.map(brewery => {
-          return <li>{brewery.name} </li>
-        })}
-      </ul>
-
-              </div>
+      <Breweries results={this.state.results}/>
+         </div>
     )
   }
 }
