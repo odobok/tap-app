@@ -2,6 +2,13 @@ import React, { Component } from 'react'
 import axios from 'axios'
 //import Recipes from './Recipes'
 
+let config = {
+  headers: {
+     'content-type': 'application/json',
+     'Access-Control-Allow-Origin': 'http://192.168.0.7:3000/',
+  }
+}
+
 class Search extends Component {
     constructor(props) {
       super(props)
@@ -15,10 +22,11 @@ class Search extends Component {
     }
 
     getBreweries = () => {
-      axios.get(`http://beermapping.com/webservice/locquery/process.env.REACT_APP_API_KEY/${this.state.value}`)
-          .then(({data}) => {
+      axios.get(`http://beermapping.com/webservice/locquery/${process.env.REACT_APP_API_KEY}/${this.state.value}&s=json`)
+          .then((data) => {
+            console.log(data)
             this.setState({
-              results:data.breweries
+              results: data
             })
           })
     }
@@ -33,13 +41,14 @@ class Search extends Component {
     }
 
   render () {
+    console.log(process.env.REACT_APP_API_KEY)
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Zip Code
+            City Name
             <input
-              type="number"
+              type="string"
               value={this.state.value}
               onChange={this.handleChange}
           />
@@ -54,6 +63,12 @@ class Search extends Component {
 
       <hr />
       {/*  <Breweries results={this.state.results}/> */}
+      <ul>
+        {this.state.results.map(brewery => {
+          return <li>{brewery.name} </li>
+        })}
+      </ul>
+
               </div>
     )
   }
