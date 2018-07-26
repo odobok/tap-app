@@ -4,7 +4,6 @@
 
 .App-header {
   background-color: orange;
-  height: 100px;
   padding: 20px;
   color: white;
 }
@@ -15,4 +14,14 @@
 
 .App-intro {
   font-size: large;
+}
+
+li {
+  list-style-type: none;
+  margin: 1em;
+}
+
+input {
+  padding: .5em;
+  margin: 1em;
 }

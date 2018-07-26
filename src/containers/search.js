@@ -22,11 +22,10 @@ class Search extends Component {
     }
 
     getBreweries = () => {
-      axios.get(`http://beermapping.com/webservice/locquery/${process.env.REACT_APP_API_KEY}/${this.state.value}&s=json`)
-          .then((data) => {
-            console.log(data)
+      axios.get(`http://beermapping.com/webservice/loccity/1d0dec692e53fe232ce728a7b7212c52/${this.state.value}&s=json`)
+          .then((result) => {
             this.setState({
-              results: data
+              results: result.data
             })
           })
     }
@@ -41,19 +40,21 @@ class Search extends Component {
     }
 
   render () {
-    console.log(process.env.REACT_APP_API_KEY)
+    console.log(this.state.results)
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>
-            City Name
+            City Name:
             <input
               type="string"
               value={this.state.value}
               onChange={this.handleChange}
           />
           </label>
-            <input type="submit" value="submit" />
+          <div>
+            <input type="submit" value="show me where the beer is!" />
+          </div>
         </form>
         <div>
           <h3>
