@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Breweries from '../Breweries'
+import Board from '../Board'
 
 class Search extends Component {
     constructor(props) {
@@ -56,7 +57,7 @@ class Search extends Component {
         </div>
 
       <hr />
-      <Breweries results={this.state.results}/>
+      <Board results={this.state.results}/>
          </div>
     )
   }
