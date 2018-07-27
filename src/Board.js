@@ -12,6 +12,9 @@ class BreweryList extends Component {
       <BreweryCard
         name={brewery.name}
         street={brewery.street}
+        blogmap={brewery.blogmap}
+        reviewlink={brewery.reviewlink}
+        phone={brewery.phone}
       />
 
     ))
